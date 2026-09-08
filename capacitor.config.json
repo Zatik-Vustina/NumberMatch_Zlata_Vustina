@@ -1,0 +1,8 @@
+{
+  "appId": "ru.numbermatch.game",
+  "appName": "Number Match",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

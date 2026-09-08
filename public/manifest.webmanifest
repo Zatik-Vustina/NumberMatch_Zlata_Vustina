@@ -1,0 +1,23 @@
+{
+  "name": "Number Match - Игра в числа",
+  "short_name": "Number Match",
+  "description": "Классическая мобильная логическая игра-головоломка в числа (Семечки)",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#09090B",
+  "theme_color": "#09090B",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
