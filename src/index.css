@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes floatFade {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.8);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(-8px) scale(1.15);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-32px) scale(1);
+    }
+  }
+
+  .animate-float-fade {
+    animation: floatFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+/* Custom smooth scrollbar for game board */
+#game-board-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+#game-board-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+#game-board-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+}
+#game-board-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Mobile-friendly tap styling */
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+span, button, h1, h2, h3, h4 {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}

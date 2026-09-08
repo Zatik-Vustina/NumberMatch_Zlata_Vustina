@@ -1,0 +1,6 @@
+{
+  "name": "Number Match - Игра в числа",
+  "description": "Увлекательная мобильная логическая головоломка Number Match: находи пары одинаковых чисел или дающих в сумме 10, очищай поле и ставь рекорды.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
