@@ -30,13 +30,24 @@ jobs:
       - name: Build Web App & Sync Capacitor
         run: npm run build:android
 
+      - name: Sanitize Android Icons & Configure Signing
+        run: |
+          which convert || (sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick)
+          for img in android/app/src/main/res/*/*.png; do
+            if [ -f "$img" ]; then
+              convert "$img" "png32:$img" || true
+            fi
+          done
+          sed -i 's/signingConfig signingConfigs.release/signingConfig signingConfigs.debug/g' android/app/build.gradle 2>/dev/null || true
+          grep -q "signingConfig signingConfigs.debug" android/app/build.gradle || sed -i '/proguardFiles/a \            signingConfig signingConfigs.debug' android/app/build.gradle || true
+
       - name: Make Gradle executable
         run: chmod +x android/gradlew
 
       - name: Build Release APK
         run: |
           cd android
-          ./gradlew assembleRelease
+          ./gradlew assembleRelease --stacktrace
 
       - name: Upload Signed APK
         uses: actions/upload-artifact@v4
